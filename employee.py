@@ -18,6 +18,11 @@ class Employee:
     def __str__(self):
         return f'Employee Instance\n\tGiven Name\t: {self.firstname}\n\tLast Name\t: {self.lastname}\n\tId\t\t: {self.id}\n\tPay Amount\t: {self.pay}'
     
+    def __eq__(self, other):
+        if isinstance(other, Employee):
+            return self.pay == other.pay
+        raise TypeError('Other is not an instance of Employee class.')
+    
     def add(self, other):
         if isinstance(other, Employee):
             return self.pay + other.pay
@@ -33,3 +38,6 @@ class Employee:
     
     def apply_raise(self):
         self.pay *= Employee.raise_amount 
+        
+    def raises_a_NoneImplementation(self):
+        raise NotImplementedError('This method is not implemented yet.')

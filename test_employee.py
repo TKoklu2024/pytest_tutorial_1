@@ -33,3 +33,8 @@ def test_verify_that_the_number_of_employees_created():
     emp2 = Employee('Test2', 'User2', 1002, 55_000)
     emp3 = Employee('Test3', 'User3', 1003, 55_000)
     assert Employee.num_of_emps != 0
+    
+def test_verify_that_custom_assertion_representation_works_correctly():
+    emp1 = Employee('Test1', 'User1', 1001, 60_000)
+    emp2 = Employee('Test2', 'User2', 1002, 60_000)
+    assert emp1 == emp2
